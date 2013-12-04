@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+    <title>Chat - Room {{room.name}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/static/css/style.css' media="screen" />
+    <script src="/static/libs/LAB.js"></script>
+    <script src="/static/js/chat.js"></script>
+</head>
+<body>
+    <h1>Room {{room.name}}</h1>
+
+	<div id="b-chat-room__content">
+		<div class="row-fluid">
+			<div class="offset2 span8">
+				<div class="row-fluid b-chat-room">
+					<div class="span9 b-chat-room__messages-container">
+						<ul class="b-chat-room__messages">
+							Carpet
+						</ul>
+						<div class="b-chat-room__enter-new-message">
+							<form>
+                                {% csrf_token %}
+                                <input type="text" name="message" class="span10 input-large" autofocus="autofocus" placeholder="Type message...">
+								<input type="submit" class="span2 btn" value="Post">
+							</form>
+						</div>
+					</div>
+					<ul class="span3 b-chat-room__users">
+						List of Visitors
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+
+    <!--<div id="users">
+        <h3>Users</h3>
+        <ul>
+            {% for user in room.users.all %}
+            <li> {{user}} </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="messages">
+        <h3>Messages</h3>
+        <ul>
+            {% for message in room.message_set.all %}
+            <li> [{{message.author}}] {{message.text}} </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div id="post_message">
+        <h3>Post Message</h3>
+        <form action="post_message" method="post">
+             {% csrf_token %}
+            <input type="text" name="message" autofocus="autofocus">
+            <input type="submit" value="Post">
+        </form>
+    </div>
+
+    <div id="json_links">
+        <h3>JSON links (debug)</h3>
+        (For debug; remove before production)
+        <ul>
+            <li> <a href="list_users_json">List of users</a> </li>
+            <li> <a href="last_messages_json?limit=10">Last 10 messages</a> </li>
+        </ul>
+    </div>-->
+</body>
+</html>
